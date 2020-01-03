@@ -33,6 +33,23 @@ mysql:latest
 See what processes are running inside the container
 `docker container top mydb`
 
+Run a command inside of a container
+```bash
+docker exec -it mydb \
+  mysql --user=root --password=$MYSQL_ROOT_PASSWORD --version
+```
+`-it` Will return display the stdout
+
+
+Run a new shell process inside of an already-running container
+```bash
+docker exec -it mydb sh
+```
+
+Remember to stop a container before `rm`ing it.
+```bash
+docker stop <container id>```
+
 
 
 
